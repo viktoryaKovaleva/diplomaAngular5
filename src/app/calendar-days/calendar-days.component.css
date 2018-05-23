@@ -1,0 +1,9 @@
+.calendar-days {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+app-calendar-day {
+    width: 50%;
+}

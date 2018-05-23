@@ -1,0 +1,13 @@
+.calendar-creator-loading {
+    display: flex;
+    justify-content: center;
+}
+
+.calendar-creator-manipulators {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mat-dialog-content .mat-form-field,
+.calendar-creator-manipulators .mat-dialog-content { width: 100%; }

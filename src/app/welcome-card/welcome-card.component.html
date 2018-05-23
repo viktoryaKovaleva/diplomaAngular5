@@ -1,0 +1,8 @@
+<div class="welcome-card-wrapper" *ngIf="!isLoggedIn()">
+  <mat-card class="welcome-card fadeInUp">
+    <mat-card-title class="welcome-card-title">Please log in</mat-card-title>
+    <mat-card-actions class="welcome-card-buttons-wrapper">
+      <button mat-button (click)="signIn()" class="welcome-card-button">sign in</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

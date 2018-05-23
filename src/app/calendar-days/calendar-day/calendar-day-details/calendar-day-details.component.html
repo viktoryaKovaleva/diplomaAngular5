@@ -1,0 +1,38 @@
+<h1 mat-dialog-title>{{ data.date | date }}</h1>
+<mat-tab-group>
+  <mat-tab label="Tasks">
+    <mat-dialog-content>
+      <img mat-card-image src="https://picsum.photos/600/250/?random">
+    </mat-dialog-content>
+    <mat-dialog-content>
+      <div class="events-list">
+        <div class="event" id={{task.id}} *ngFor="let task of tasks ; let eventIndex = index">
+          <mat-form-field class="example-full-width">
+            <input matInput #eventText placeholder="" value={{task.summary}}>
+          </mat-form-field>
+          <div class="action-buttons">
+            <button mat-button (click)="editEvent(task.id, eventText.value)">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-button (click)="removeTask(task.id, task.summary, eventIndex)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
+    </mat-dialog-content>
+  </mat-tab>
+  <mat-tab label="Create new task">
+    <div class="create-new-task">
+      <mat-form-field>
+        <input matInput #input placeholder="New task text">
+      </mat-form-field>
+      <button mat-button (click)="addEvent(input.value, data.date)">Add</button>
+    </div>
+  </mat-tab>
+</mat-tab-group>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+</div>

@@ -1,0 +1,9 @@
+<mat-card>
+  <mat-card-content>
+    <img mat-card-image src="https://picsum.photos/500/150/?random">
+  </mat-card-content>
+  <mat-card-title>{{ date | date:"EEEE" }}</mat-card-title>
+  <mat-card-actions>
+    <button mat-button (click)="getCalendarEvents(date)">Open</button>
+  </mat-card-actions>
+</mat-card>

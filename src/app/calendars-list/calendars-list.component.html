@@ -1,0 +1,14 @@
+<h1 mat-dialog-title>Your calendars</h1>
+<mat-dialog-content>
+    <mat-radio-group>
+        <mat-list role="list">
+            <mat-list-item *ngFor="let calendar of data" role="listitem">
+                <mat-radio-button value="{{calendar.id}}" (click)="getCalendarId(calendar.id)">{{calendar.summary}}</mat-radio-button>
+            </mat-list-item>
+        </mat-list>
+    </mat-radio-group>
+</mat-dialog-content>
+<div mat-dialog-actions>
+    <button mat-button mat-dialog-close (click)="onCloseCancel()">Close</button>
+    <button mat-button (click)="onCloseConfirm()">Done</button>
+</div>

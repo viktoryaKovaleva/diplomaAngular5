@@ -1,0 +1,3 @@
+<app-nav-bar *ngIf="isLoggedIn()"></app-nav-bar>
+<app-calendar-dialog *ngIf="isLoggedIn() && !isCalendarSelected()"></app-calendar-dialog>
+<app-calendar-days *ngIf="isLoggedIn() && isCalendarSelected()"></app-calendar-days>

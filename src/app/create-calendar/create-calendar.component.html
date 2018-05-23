@@ -1,0 +1,17 @@
+<div class="calendar-creator-manipulators" *ngIf="!isProcessing">
+  <h1 mat-dialog-title>Calendar Creator</h1>
+  <mat-dialog-content>
+    <mat-form-field hintLabel="Max 60 characters">
+      <input matInput #input maxlength="60" placeholder="Calendar Title">
+      <mat-hint align="end">{{input.value?.length || 0}}/60</mat-hint>
+    </mat-form-field>
+  </mat-dialog-content>
+  <div mat-dialog-actions>
+    <button mat-button mat-dialog-close (click)="onCloseCancel()">Close</button>
+    <button mat-button (click)="onCloseConfirm(input.value)">Done</button>
+  </div>
+</div>
+
+<div class="calendar-creator-loading" *ngIf="isProcessing">
+  <mat-spinner *ngIf="isProcessing"></mat-spinner>
+</div>
